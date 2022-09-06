@@ -63,11 +63,14 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+    Checked Network under inspect and saw constant was unitialized. This led to me to find typo of "Toys.create..." when it should have been "Toy.create...). Fixed the typo.
 
 - Update the number of likes for a toy
 
   - How I debugged:
+    Not found on client side so I checked the update route and saw that while the toy was being found and updates, it was not being sent as json to the client to render. Added a line accomplishing this.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+    Check the destroy method and it looked good so I figured it was missing from the resources routes. Added it in routes.config.
